@@ -7,20 +7,20 @@ import requests
 import geocoder
 import json
 
-openweathermap_KEY = 'Digite sua api do openweathermap aqui'
-tomtom_KEY = 'Digite sua api do tomtom aqui'
+openweathermap_KEY = 'dda6034a6db80a98df14e0ebbb9e487d'
+tomtom_KEY = 'hdhacRfdRw5R4ssmkzFlVuqfRhiVwMW7'
 
 
 class ActionAskWeather(Action):
     def name(self) -> Text:
         return "action_ask_weather"
 
-    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+    def run(self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:  # noqa: E501
         result = ""
         local = next(tracker.get_latest_entity_values('GPE'), None)
         if local is None:
             latitude, longitude = "-24.7105133", "-53.7477903"
-            result = "Não entendi o local que deseja. Vou dizer a temperatura de Toledo, Paraná, Brazil. "
+            result = "Não entendi o local que deseja. Vou dizer a temperatura de Toledo, Paraná, Brazil. "  # noqa: E501
         else:
             geolocation = geocoder.tomtom(
                 location=local, key=tomtom_KEY)
@@ -37,7 +37,7 @@ class ActionAskWeather(Action):
         description = json_data['weather'][0]['description'].capitalize()
         temperatura = json_data['main']['temp']
         umidade = json_data['main']['humidity']
-        result += '{}. A temperatura no momento é de {}°C e umidade do ar é de {}%.'.format(
+        result += '{}. A temperatura no momento é de {}°C e umidade do ar é de {}%.'.format(  # noqa: E501
             description, temperatura, umidade)
 
         dispatcher.utter_message(text=result)
