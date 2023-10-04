@@ -1,7 +1,13 @@
 slots:
   GPE:
     type: text
+    mappings:
+    - type: from_entity
+      entity: GPE
 
+entities:
+  - GPE
+  
 intents:
   - greet
   - goodbye
@@ -11,9 +17,16 @@ intents:
   - mood_unhappy
   - bot_challenge
   - ask_weather
+  - inform
+  - chit_chat
+  - inquire
+  - thank_you
 
 actions:
   - action_ask_weather
+  - utter_ask_location
+  - utter_thank_you
+  - utter_default
 
 responses:
   utter_greet:
@@ -34,6 +47,12 @@ responses:
 
   utter_iamabot:
   - text: "I am a bot, powered by Rasa."
+
+  utter_ask_location:
+  - text: "Para qual localização?"
+
+  utter_thank_you:
+  - text: "Por nada, ajudo em algo mais?"
 
 session_config:
   session_expiration_time: 60

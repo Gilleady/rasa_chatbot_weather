@@ -1,0 +1,395 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: say goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: bot challenge
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: weather
+  steps:
+  - intent: ask_weather
+  - action: action_ask_weather
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+  - action: utter_ask_location
+  - intent: inform{"location":"São Paulo"}
+  - action: action_ask_weather
+  - intent: affirm
+  - action: action_listen  
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform{"location":"Campinas"}
+  - action: action_ask_weather
+  - intent: affirm
+  - action: action_listen   
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+  - action: utter_ask_location
+  - intent: inform{"location":"Rio de Janeiro"}
+  - action: action_ask_weather
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform{"location":"Salvador"}
+  - action: action_ask_weather
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+  - action: utter_ask_location
+  - intent: inform{"location":"Recife"}
+  - action: action_ask_weather
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform{"location":"Belo Horizonte"}
+  - action: action_ask_weather
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_greet
+  - intent: inform{"location":"Brasília"}
+  - action: action_ask_weather
+  - intent: inform{"location":"Santos"}
+  - action: action_ask_weather
+  - intent: inform{"location":"Curitiba"}
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location 
+  - intent: inform{"location":"Santos"}
+  - action: action_ask_weather
+
+- story: New Story    
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+  - action: utter_ask_location
+  - intent: inform{"location":"Pará"}
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location 
+  - intent: inform{"location":"Fortaleza"}
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location 
+  - intent: inform{"location":"Goiânia"}
+  - action: action_ask_weather
+  - intent: greet
+  - action: utter_greet
+  - intent: inform
+  - action: utter_ask_location
+  - intent: inform{"location":"São José dos Campos"}
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location 
+  - intent: inform{"location":"Belo Horizonte"}
+  - action: action_ask_weather
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_greet
+  - intent: inquire
+  - action: utter_ask_location
+  - intent: inform{"location":"São Bernardo do Campo"}
+  - action: action_ask_weather
+
+  - intent: inform{"location":"Santo André"}
+  - action: action_ask_weather
+  - intent: inform{"location":"Brasília"}
+  - action: action_ask_weather
+  - intent: thank_you
+  - action: utter_thank_you
+
+- story: New Story
+  steps:
+  - intent: inquire
+  - intent: greet
+  - action: utter_greet
+  - intent: inform{"location":"Brasília"}
+  - action: action_ask_weather
+  - intent: greet
+  - action: utter_greet
+  - intent: thank_you
+  - action: utter_thank_you
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: greet
+  - action: utter_greet
+  - intent: thank_you
+  - action: utter_thank_you
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: inform{"location":"Recife"}
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location
+  - intent: inform{"location":"Brasília"}
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location
+  - intent: inform
+  - intent: inform{"location":"Diadema"}
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location
+  - intent: inform{"location":"Brasília"}
+  - action: action_ask_weather
+  - intent: thank_you
+  - action: utter_thank_you
+  - intent: inform{"location":"Salvador"}
+  - intent: inform{"location":"Salvador"}
+  - action: action_ask_weather
+  - intent: inform{"location":"Salto"}
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location
+  - intent: inform{"location":"Diadema"}
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location
+  - intent: inform
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location
+  - intent: inform{"location":"Brasília"}
+  - action: action_ask_weather
+  - intent: inform{"location":"Recife"}
+  - action: action_ask_weather
+  - intent: inform{"location":"Guarulhos"}
+  - action: action_ask_weather
+  - intent: greet
+  - action: utter_greet
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: inform{"location":"Brasília"}
+  - action: action_ask_weather
+  - intent: inform
+  - action: action_ask_weather
+  - intent: inform
+  - action: action_ask_weather
+  - intent: inform
+  - action: action_ask_weather
+  - intent: inform{"location":"São Bernardo do Campo"}
+  - action: action_ask_weather
+  - intent: inform{"location":"Diadema"}
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location
+  - intent: inform{"location":"Brasília"}
+  - action: action_ask_weather
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: New Story
+  steps:
+  - intent: inform{"location":"Guarulhos"}
+  - action: action_ask_weather
+  - intent: inform{"location":"Guarulhos"}
+  - action: action_ask_weather
+  - intent: chit_chat
+  - action: utter_default  
+  - intent: inquire
+  - action: utter_ask_location
+  - intent: inform
+  - action: action_ask_weather
+  - intent: inform{"location":"Diadema"}
+  - action: action_ask_weather
+  - intent: chit_chat
+  - action: utter_default
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_greet
+  - intent: inform{"location":"Santos"}
+  - action: action_ask_weather
+  - intent: inform{"location":"Salvador"}
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location
+  - intent: inform
+  - action: action_ask_weather
+  - intent: inquire
+  - action: utter_ask_location
+  - intent: inform{"location":"Salvador"}
+  - action: action_ask_weather
+  - intent: inform{"location":"Curitiba"}
+  - action: action_ask_weather
+  - intent: inform
+  - action: action_ask_weather
+
+- story: New Story
+  steps:
+  - intent: inform{"location":"Santos"}
+  - action: action_ask_weather
+  - intent: inform{"location":"Curitiba"}
+  - action: action_ask_weather
+  - intent: goodbye
+  - action: utter_goodbye
+  - intent: chit_chat
+  - action: utter_default
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: chit_chat
+  - action: utter_default  
+  - intent: greet
+  - action: utter_greet
+  - intent: inform{"location":"Diadema"}
+  - action: action_ask_weather
+  - intent: affirm
+  - action: action_listen
+  - intent: inform{"location":"Santos"}
+  - action: action_ask_weather
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: New Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_greet
+  - intent: inform{"location":"São Bernardo do Campo"}
+  - action: action_ask_weather
+  - intent: affirm
+  - action: action_listen
+  - intent: thank_you
+  - action: utter_thank_you
+  - intent: chit_chat
+  - action: utter_default
+
+- story: New Story
+  steps:
+  - intent: chit_chat
+  - action: utter_default
+  - intent: greet
+  - action: utter_greet
+  - intent: chit_chat
+  - action: utter_default
+  - intent: chit_chat
+  - action: utter_default
+  - intent: inform{"location":"Curitiba"}
+  - action: action_ask_weather
+  - intent: affirm
+  - action: action_listen
+  - intent: thank_you
+  - action: utter_thank_you
+  - intent: chit_chat
+  - action: utter_default
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- story: New Story    
+  steps:
+  - intent: affirm
+  - action: action_listen
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: action_listen
+
+- story: affirm Story
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_challenge
+  - action: utter_iamabot
+  - intent: affirm
+  - action: action_listen
